@@ -12,6 +12,7 @@ function App() {
       <div>
         <div className="search-bar-container">
           <SearchBar />
+          <h1 style={{color:"red"}}>allora</h1>
         </div>
       </div>
     </div>
