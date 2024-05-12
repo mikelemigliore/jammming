@@ -21,15 +21,9 @@ img {
 nav {
   background-color: #e4e2dd;
   padding: 0.5vmin;
-}
-
-.search-bar-container {
-  padding-top: 20vh;
-  width: 40%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* position:fixed;
+  width:100%;
+  z-index: 1; */
 }
 
 
@@ -39,7 +33,7 @@ nav {
     height: auto;
   }
 
-  nav{
-    padding:2vmin;
+  nav {
+    padding: 2vmin;
   }
 }

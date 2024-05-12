@@ -10,9 +10,8 @@ function App() {
         <img src={logo} alt="logo" />
       </nav>
       <div>
-        <div className="search-bar-container">
+        <div>
           <SearchBar />
-          <h1 style={{color:"red"}}>allora</h1>
         </div>
       </div>
     </div>
