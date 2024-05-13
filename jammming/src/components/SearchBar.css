@@ -121,6 +121,54 @@ h1 {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
+
+.add-buttom{
+    background-color: #b6b3b3;
+    padding:12px;
+    margin-top:3vmin;
+    margin-left:36vmin;
+    border-radius: 50%;
+    border:none;
+}
+
+.add-buttom:hover{
+    background-color: rgb(24, 21, 21);
+}
+
+#plus-icon{
+    color:#e4e0dd;
+    font-size: 3vmin;
+}
+
+
+.remove-buttom{
+    background-color: #b6b3b3;
+    padding:12px;
+    margin-top:3vmin;
+    margin-left:36vmin;
+    border-radius: 50%;
+    border:none;
+}
+
+.remove-buttom:hover{
+    background-color: rgb(24, 21, 21);
+}
+
+#x-icon{
+    color:#e4e0dd;
+    font-size: 3vmin;
+}
+
+.save-button{
+    font-size:20px;
+    font-weight: bolder;
+    margin-left:35%;
+    margin-top:5vmin;
+    padding:30px;
+    border-radius: 20px;
+}
+
+
 /* Adjustments for tablets and below */
 @media (max-width: 768px) {
   .container {
