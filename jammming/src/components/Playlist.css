@@ -1,0 +1,32 @@
+
+  .playlist-wrapper {
+    background-color: #e4e0dd;
+    margin-top: 70px;
+    border-radius: 20px;
+    width: 80vmin;
+    padding: 3vmin;
+    margin-bottom: 70px;
+    opacity: 0.9;
+  }
+
+  
+  .remove-buttom{
+      background-color: #b6b3b3;
+      padding:12px;
+      margin-top:3vmin;
+      margin-left:36vmin;
+      border-radius: 50%;
+      border:none;
+  }
+  
+  .remove-buttom:hover{
+      background-color: rgb(24, 21, 21);
+  }
+  
+  #x-icon{
+      color:#e4e0dd;
+      font-size: 3vmin;
+  }
+  
+
+  
