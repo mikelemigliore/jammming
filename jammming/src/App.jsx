@@ -24,14 +24,23 @@ function App() {
   const [data, setData] = useState([]);
   const [playList, setPlayList] = useState([]);
   const [uri, setUri] = useState([]);
+  const [login, setLogIn] = useState(
+    localStorage.getItem("spotify_access_token") &&
+      localStorage.getItem("user_id")
+  );
 
   useEffect(() => {
-    if (emptyAccessToken) {
-      getAccessToken();
-    }
+    const hash = window.location.hash.substring(1);
+    const params = new URLSearchParams(hash);
+    const accessToken = params.get("access_token");
 
-    if (emptyUserId && !emptyAccessToken) {
-      getUser();
+    if (accessToken) {
+      localStorage.setItem("spotify_access_token", accessToken);
+      window.location.hash = ""; // Clean up the URL
+      setLogIn(true); // Update login state immediately
+      if (!localStorage.getItem("user_id")) {
+        getUser(accessToken); // Fetch user details
+      }
     }
   }, []);
 
@@ -45,11 +54,11 @@ function App() {
 
       window.location.href = url;
 
-      const hash = window.location.hash.substring(1);
-      const params = new URLSearchParams(hash);
-      const accessToken = params.get("access_token");
+      // const hash = window.location.hash.substring(1);
+      // const params = new URLSearchParams(hash);
+      // const accessToken = params.get("access_token");
 
-      localStorage.setItem("spotify_access_token", accessToken);
+      // localStorage.setItem("spotify_access_token", accessToken);
     } catch (error) {
       console.log(error);
     }
@@ -95,31 +104,43 @@ function App() {
     });
   };
 
-  return (
-    <div className="App">
-      <nav>
-        <img src={logo} alt="logo" />
-      </nav>
-      <div>
+  if (!login) {
+    return (
+      <div className="Log">
+        <p className="login_statement">
+          The following web application requires that the user login in in their
+          spotify account in order to creat and save their personalize playlist
+          into their account.
+          Please Log In to continue.
+        </p>
         <div>
-          <SearchBar onSearched={(items) => setData(items)} />
-          <div className="container">
-            <Results
-              data={data}
-              addToPlayList={addToPlayList}
-              playList={playList}
-              uri={uri}
-            />
-            <Playlist
-              playList={playList}
-              uri={uri}
-              removeFromPlaylist={removeFromPlaylist}
-            />
-          </div>
+          <button className="login-button" onClick={getAccessToken}>Log In</button>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className="App">
+        <nav>
+          <img src={logo} alt="logo" />
+        </nav>
+        <SearchBar onSearched={(items) => setData(items)} />
+        <div className="container">
+          <Results
+            data={data}
+            addToPlayList={addToPlayList}
+            playList={playList}
+            uri={uri}
+          />
+          <Playlist
+            playList={playList}
+            uri={uri}
+            removeFromPlaylist={removeFromPlaylist}
+          />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
