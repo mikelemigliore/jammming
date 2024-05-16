@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Save_button";
 import { AiOutlineClose } from "react-icons/ai";
 import Save_button from "./Save_button";
+import { PiEmpty } from "react-icons/pi";
 
 function Playlist({ uri, playList, removeFromPlaylist }) {
   const [playListTitle, setPlayListTitle] = useState("");
@@ -23,7 +24,11 @@ function Playlist({ uri, playList, removeFromPlaylist }) {
           onChange={(e) => setPlayListTitle(e.target.value.toLocaleLowerCase())}
         />
         <div className="line"></div>
-        {playList.length === 0 && <h2 className="empty">Empty Playlist</h2>}
+        {playList.length === 0 && (
+          <h2 className="empty-icon">
+            <PiEmpty />
+          </h2>
+        )}
         {playList.map((track) => (
           <div key={track.id} className="result-text">
             <div className="album-img">

@@ -108,13 +108,13 @@ function App() {
     return (
       <div className="Log">
         <p className="login_statement">
-          The following web application requires that the user login in in their
-          spotify account in order to creat and save their personalize playlist
-          into their account.
-          Please Log In to continue.
+          This web application requires users to log in to their Spotify account
+          to create and save personalized playlists. Please log in to continue.
         </p>
         <div>
-          <button className="login-button" onClick={getAccessToken}>Log In</button>
+          <button className="login-button" onClick={getAccessToken}>
+            Log In or Sign Up
+          </button>
         </div>
       </div>
     );

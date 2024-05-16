@@ -3,56 +3,51 @@
   padding: 0;
 }
 
-
 .Log {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center; /* This centers the text inside the paragraph */
   justify-content: center;
   background-color: #e4e2dd;
-  margin-top:40vmin;
-  margin-left:25%;
-  margin-right:25%;
-  padding:7vmin;
-  border-radius:2vmin;
+  margin-top: 30vmin;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 5vmin;
+  border-radius: 2vmin;
 }
 
-.login_statement{
+.login_statement {
+  line-height: 5vmin;
   font-size: 25px;
-  font-family: "Lucida Console", "Courier New", monospace;
+  font-family: "Times New Roman", Times, serif;
 }
 
-
-.login-button{
+.login-button {
   text-decoration: none;
-  font-weight:bold;
-  border: none; 
-  padding: 12px 40px; 
-  font-size: 20px; 
-  background-color: #e4e2dd; 
-  color: #000000; 
-  border-radius: 5px; 
-  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24); 
-  cursor: pointer; 
-  outline: none; 
-  transition: 0.2s all; 
-  margin-top:6vmin;
+  font-weight: bold;
+  border: none;
+  padding: 12px 40px;
+  font-size: 20px;
+  background-color: #e4e2dd;
+  color: #000000;
+  border-radius: 5px;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  outline: none;
+  transition: 0.2s all;
+  margin-top: 6vmin;
 }
 
-
-
-.login-button:hover{
+.login-button:hover {
   background-color: black;
-  color:#e4e2dd;
-  cursor: pointer; 
+  color: #e4e2dd;
+  cursor: pointer;
 }
 
-.login-button:active{
-  transform: scale(0.98); 
+.login-button:active {
+  transform: scale(0.98);
 }
-
-
 
 html {
   background-image: url("background.png");
@@ -77,7 +72,6 @@ nav {
   z-index: 1; */
 }
 
-
 @media only screen and ((max-width: 568px)) {
   img {
     width: 60vmin;
@@ -88,25 +82,23 @@ nav {
     padding: 2vmin;
   }
 
-
   .Log {
-    margin-top:60vmin;
-    margin-left:20%;
-    margin-right:20%;
-    padding:8vmin;
-    border-radius:2vmin;
+    margin-top: 60vmin;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 8vmin;
+    border-radius: 2vmin;
   }
-  
-  
-  .login-button{
-    font-size:20px;
+
+  .login-button {
+    font-size: 20px;
     font-weight: bolder;
-    margin-top:5vmin;
-    padding:20px;
+    margin-top: 5vmin;
+    padding: 20px;
     border-radius: 20px;
   }
 
-  .login_statement{
+  .login_statement {
     font-size: 18px;
   }
 }
