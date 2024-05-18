@@ -248,6 +248,7 @@ h1 {
   cursor: pointer;
   outline: none;
   transition: 0.2s all;
+  margin-left: 3%;
 }
 
 .create-new:hover {
@@ -262,6 +263,11 @@ h1 {
 
 /* Adjustments for tablets and below */
 @media (max-width: 768px) {
+
+  input {
+    font-size: 1.3rem;
+  }
+
   .container {
     display: flex;
     flex-direction: column;
@@ -290,5 +296,76 @@ h1 {
     height: auto;
     margin-bottom: 5vmin;
     margin-right: 30vmin;
+  }
+
+  .playlist-wrapper {
+    margin-top: 0px;
+    border-radius: 20px;
+    padding-bottom:40px;
+  }
+
+  .playlist-title {
+    font-size: 6.5vmin;
+  }
+
+  .empty {
+    padding-top:40px;
+    font-size: 5vmin;
+  }
+
+  .empty-icon {
+    padding-top:60px;
+    font-size: 9vmin;
+  }
+
+  .add-buttom {
+    padding: 12px;
+    margin-top: 1vmin;
+    margin-left: 55vmin;
+  }
+
+  #plus-icon {
+    font-size: 6vmin;
+  }
+
+  .remove-buttom {
+    margin-top: 3vmin;
+    margin-left: 55vmin;
+    border-radius: 20%;
+  }
+
+  #x-icon {
+    font-size: 6vmin;
+  }
+
+  .save-button {
+    font-size: 20px;
+    font-weight: bolder;
+    margin-left: 25%;
+    margin-top: 5vmin;
+    padding: 30px;
+    border-radius: 20px;
+  }
+  
+  #checkmark-icon {
+    margin-bottom: -7px;
+    font-size: 6vmin;
+  }
+
+  .create-new {
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 1vmin;
+    margin-left: 7%;
+  }
+
+  .results-wrapper {
+    background-color: #e4e2dd;
+    margin-top: 70px;
+    border-radius: 20px;
+    width: 80vmin;
+    padding: 3vmin;
+    padding-bottom: 10vmin;
+    margin-bottom: 100px;
   }
 }
