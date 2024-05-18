@@ -91,6 +91,10 @@ function App() {
         },
       });
 
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const user = await res.json();
 
       localStorage.setItem("user_id", user.id);
