@@ -92,7 +92,7 @@ function App() {
       });
 
       if (!res.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error(`HTTP error! status: ${res.status}`);
       }
 
       const user = await res.json();
