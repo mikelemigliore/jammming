@@ -1,4 +1,6 @@
 //To make it accessible online, I need a domain
+//I use Natlify because it provides a sub-domain in which i can redirect the user using callback
+//In order to make the website accessible to everyone and not just the developer, i need to can the Spotify Developer Mode into Extenting Mode, or add users to the user managment section
 
 import React, { useEffect, useState } from "react";
 import "./App.css";
