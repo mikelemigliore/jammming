@@ -58,6 +58,7 @@ function App() {
 
       if (accessToken) {
         localStorage.setItem('spotify_access_token', accessToken);
+        console.log(emptyAccessToken);
         window.location.hash = ''; // Clean up the URL
         setLogIn(true); // Update login state immediately
         if (!localStorage.getItem('user_id')) {
