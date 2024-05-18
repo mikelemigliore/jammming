@@ -1,4 +1,3 @@
-
 //To make it accessible online, I need a domain
 
 import React, { useEffect, useState } from "react";
@@ -9,20 +8,20 @@ import Results from "./components/Results";
 import Playlist from "./components/Playlist";
 
 const client_id = "fea0709279ed4657b71b9303bd4205f2";
-const client_secret = "1d6f9baca00448d4a06e895c2609aadc";
+//const client_secret = "1d6f9baca00448d4a06e895c2609aadc";
 //const redirect_uri = "https://mikelemigliore.github.io/jammming/callback";
 const redirect_uri = "http://localhost:3000/callback";
 const scope = "playlist-modify-private";
 
 const emptyAccessToken =
   !localStorage.getItem("spotify_access_token") ||
-  localStorage.getItem("spotify_access_token") == "null" ||
-  localStorage.getItem("spotify_access_token") == "undefined";
+  localStorage.getItem("spotify_access_token") === "null" ||
+  localStorage.getItem("spotify_access_token") === "undefined";
 
 const emptyUserId =
   !localStorage.getItem("user_id") ||
-  localStorage.getItem("user_id") == "null" ||
-  localStorage.getItem("user_id") == "undefined";
+  localStorage.getItem("user_id") === "null" ||
+  localStorage.getItem("user_id") === "undefined";
 
 function App() {
   const [data, setData] = useState([]);
@@ -40,6 +39,7 @@ function App() {
 
     if (accessToken) {
       localStorage.setItem("spotify_access_token", accessToken);
+      console.log(emptyAccessToken);
       window.location.hash = ""; // Clean up the URL
       setLogIn(true); // Update login state immediately
       if (!localStorage.getItem("user_id")) {
@@ -74,6 +74,7 @@ function App() {
       const user = await res.json();
 
       localStorage.setItem("user_id", user.id);
+      console.log(emptyUserId);
     } catch (error) {
       console.log(error);
     }

@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Playlist";
 import { FiPlus } from "react-icons/fi";
-import Playlist from "./Playlist";
 
-function Results({data, addToPlayList, playList, uri}) {
+function Results({data, addToPlayList }) {
 
   const time = (ms) => {
     const totalSeconds = Math.floor(ms / 1000);
