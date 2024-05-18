@@ -1,5 +1,5 @@
 
-//To make it accessible online i need a domain
+//To make it accessible online, I need a domain
 
 import React, { useEffect, useState } from "react";
 import "./App.css";
@@ -41,7 +41,7 @@ function App() {
     if (accessToken) {
       localStorage.setItem("spotify_access_token", accessToken);
       window.location.hash = ""; // Clean up the URL
-      //setLogIn(true); // Update login state immediately
+      setLogIn(true); // Update login state immediately
       if (!localStorage.getItem("user_id")) {
         getUser(accessToken); // Fetch user details
       }
