@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import "./Save_button";
+import React, { useState } from "react";
+//import "./SaveButton";
 import { AiOutlineClose } from "react-icons/ai";
-import Save_button from "./Save_button";
+import SaveButton from "./SaveButton";
 import { PiEmpty } from "react-icons/pi";
 
 function Playlist({ uri, playList, removeFromPlaylist }) {
@@ -56,7 +56,7 @@ function Playlist({ uri, playList, removeFromPlaylist }) {
           </div>
         ))}
 
-        <Save_button
+        <SaveButton
           playListTitle={playListTitle}
           playList={playList}
           uris={uri}
