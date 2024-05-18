@@ -11,13 +11,18 @@ function SearchBar({ onSearched }) {
   const searchAlbum = async () => {
     try {
       //GET  to receive the specific data indicated ion the input and using the access_token as credentials
-      const urlToFetch = `${spotifyUrl}?q=remaster%2520track%2520artist%3A${input}&type=track`;
+      // const urlToFetch = `${spotifyUrl}?q=remaster%2520track%2520artist%3A${input}&type=track`;
+      const urlToFetch = `${spotifyUrl}?q=remaster track artist:${input}&type=track`;
       const response = await fetch(urlToFetch, {
         headers: {
           Authorization:
             "Bearer " + localStorage.getItem("spotify_access_token"),
         },
       });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
       const data = await response.json();
       onSearched(data.tracks.items);

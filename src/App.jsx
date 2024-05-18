@@ -11,7 +11,7 @@ const client_id = "fea0709279ed4657b71b9303bd4205f2";
 //const client_secret = "1d6f9baca00448d4a06e895c2609aadc";
 const redirect_uri = "https://mikelemigliorejammming.netlify.app/callback";
 //const redirect_uri = "http://localhost:3000/callback";
-const scope = "playlist-modify-private";
+const scope = 'user-read-private playlist-modify-private';
 
 const emptyAccessToken =
   !localStorage.getItem("spotify_access_token") ||
