@@ -1,3 +1,6 @@
+
+//To make it accessible online i need a domain
+
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import logo from "./logo.png";
@@ -8,7 +11,6 @@ import Playlist from "./components/Playlist";
 const client_id = "fea0709279ed4657b71b9303bd4205f2";
 const client_secret = "1d6f9baca00448d4a06e895c2609aadc";
 //const redirect_uri = "https://mikelemigliore.github.io/jammming/callback";
-// const redirect_uri = 'http://localhost:8888/callback';
 const redirect_uri = "http://localhost:3000/callback";
 const scope = "playlist-modify-private";
 
@@ -26,10 +28,10 @@ function App() {
   const [data, setData] = useState([]);
   const [playList, setPlayList] = useState([]);
   const [uri, setUri] = useState([]);
-  const [login, setLogIn] = useState(
-    localStorage.getItem("spotify_access_token") &&
-      localStorage.getItem("user_id")
-  );
+  // const [login, setLogIn] = useState(
+  //   localStorage.getItem("spotify_access_token") &&
+  //     localStorage.getItem("user_id")
+  // );
 
   useEffect(() => {
     const hash = window.location.hash.substring(1);
@@ -39,7 +41,7 @@ function App() {
     if (accessToken) {
       localStorage.setItem("spotify_access_token", accessToken);
       window.location.hash = ""; // Clean up the URL
-      setLogIn(true); // Update login state immediately
+      //setLogIn(true); // Update login state immediately
       if (!localStorage.getItem("user_id")) {
         getUser(accessToken); // Fetch user details
       }
@@ -100,21 +102,21 @@ function App() {
     });
   };
 
-  if (!login) {
-    return (
-      <div className="Log">
-        <p className="login_statement">
-          This web application requires users to log in to their Spotify account
-          to create and save personalized playlists. Please log in to continue.
-        </p>
-        <div>
-          <button className="login-button" onClick={getAccessToken}>
-            Log In or Sign Up
-          </button>
-        </div>
-      </div>
-    );
-  } else {
+  // if (!login) {
+  //   return (
+  //     <div className="Log">
+  //       <p className="login_statement">
+  //         This web application requires users to log in to their Spotify account
+  //         to create and save personalized playlists. Please log in to continue.
+  //       </p>
+  //       <div>
+  //         <button className="login-button" onClick={getAccessToken}>
+  //           Log In or Sign Up
+  //         </button>
+  //       </div>
+  //     </div>
+  //   );
+  // } else {
     return (
       <div className="App">
         <nav>
@@ -136,7 +138,7 @@ function App() {
         </div>
       </div>
     );
-  }
+  //}
 }
 
 export default App;
