@@ -32,18 +32,37 @@ function App() {
       localStorage.getItem("user_id")
   );
 
-  useEffect(() => {
-    const hash = window.location.hash.substring(1);
-    const params = new URLSearchParams(hash);
-    const accessToken = params.get("access_token");
+  // useEffect(() => {
+  //   const hash = window.location.hash.substring(1);
+  //   const params = new URLSearchParams(hash);
+  //   const accessToken = params.get("access_token");
 
-    if (accessToken) {
-      localStorage.setItem("spotify_access_token", accessToken);
-      console.log(emptyAccessToken);
-      window.location.hash = ""; // Clean up the URL
-      setLogIn(true); // Update login state immediately
-      if (!localStorage.getItem("user_id")) {
-        getUser(accessToken); // Fetch user details
+  //   if (accessToken) {
+  //     localStorage.setItem("spotify_access_token", accessToken);
+  //     console.log(emptyAccessToken);
+  //     window.location.hash = ""; // Clean up the URL
+  //     setLogIn(true); // Update login state immediately
+  //     if (!localStorage.getItem("user_id")) {
+  //       getUser(accessToken); // Fetch user details
+  //     }
+  //   }
+  // }, []);
+
+
+  useEffect(() => {
+    const currentURL = window.location.href;
+    if (currentURL.includes('callback')) {
+      const hash = window.location.hash.substring(1);
+      const params = new URLSearchParams(hash);
+      const accessToken = params.get('access_token');
+
+      if (accessToken) {
+        localStorage.setItem('spotify_access_token', accessToken);
+        window.location.hash = ''; // Clean up the URL
+        setLogIn(true); // Update login state immediately
+        if (!localStorage.getItem('user_id')) {
+          getUser(accessToken); // Fetch user details
+        }
       }
     }
   }, []);
